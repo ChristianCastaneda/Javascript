@@ -34,4 +34,5 @@ function consultarProducto () {
     } else{
         console.warn('Comprendemos, vuelve cuando lo desees! 😁👍')
     }
+    let codigo
 }
