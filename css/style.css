@@ -19,8 +19,9 @@
   ol{
     font-family: 'Heebo', sans-serif;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 50px;
     padding: 50px;
     justify-content: center;
+    align-items: center;
   }
