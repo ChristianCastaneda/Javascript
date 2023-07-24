@@ -90,3 +90,74 @@ function comprar() {
         alert('⛔ Error en el codigo del producto. Refresca para comenzar de nuevo')
     }
 }
+
+
+const tableProductos = document.querySelector('#tablaProductos')
+const inputBuscar = document.querySelector ('#inputSearch')
+const divToast = document.querySelector('div.toast-msg')
+
+function cargarProductos(array) {
+    tableProductos.innerHTML = ""
+    if (array.length > 0) {
+        array.forEach ((producto)=> tableProductos.innerHTML += crearFilaHTML (producto))
+        activarClickEnBotonesProductos()
+    } else {
+        divToast.textContent = "No hay productos para listar"
+    }
+}
+
+inputBuscar.addEventListener("search", ()=> {
+    if (inputBuscar.value.trim() !== "") {
+        let arrayResultante = productos.filter((producto)=> producto.nombre.toLowerCase().includes(inputBuscar.value.trim().toLowerCase()))
+        cargarProductos(arrayResultante)
+    }
+})
+
+function activarClickEnBotonesProductos(){
+    const botones = document.querySelectorAll('button.button.button-outline.button-big-emoji')
+    botones.forEach((boton)=> {
+        boton.addEventListener("click", ()=> {
+            let producto = productos.find((producto)=> producto.id === parseInt(producto.id))
+            carrito.push(producto)
+            divToast.textContent = '✅ Se agrego un producto al carrito:' + producto.nombre
+            guardarProdEnLocalStorage()
+        })
+    })
+}
+
+function guardarProdEnLocalStorage() {
+    if (carrito.length > 0) {
+        localStorage.setItem('MisFavoritos', JSON.stringify(carrito))
+    }
+}
+
+cargarProductos(productos)
+
+// function quitarProducto() { // *FUNCION PARA QUITAR UN PRODUCTO DEL CARRITO* (FALTA TERMINAR)
+//     let respuesta
+//     confirm('Desea quitar un producto de tu carrito? 🤷🏽‍♂️')
+//     if (respuesta !== false) {
+//         console.table(carrito)
+//         let codigo = prompt('Ingrese el codigo del producto que desea quitar del carrito:')
+//         let resultado = productos.find((producto)=> producto.id === codigo)
+//         if (resultado !== undefined) {
+
+//         } else {
+//             alert('No se encontro el codigo del producto que desea quitar', codigo)
+//         }
+//     } else {
+//         alert('Perfecto! No quitamos ningun producto de tu carrito 😊')
+//     }
+// }
+
+// function quitarProdCarrito(){
+//     const botones = document.querySelectorAll('button.button.button-outline.button-big-emoji')
+//     botones.forEach((boton)=> {
+//         boton.addEventListener("click", ()=> {
+//             let producto = productos.find((producto)=> producto.id === parseInt(producto.id))
+//             carrito.splice(id, 1)
+//             divToast.textContent = '⛔ Se elimino un producto del carrito:' + producto.nombre
+//             guardarProdEnLocalStorage()
+//         })
+//     })
+// }
