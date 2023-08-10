@@ -1,27 +1,101 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400&family=Heebo:wght@300;400&display=swap');
 
-*{
-   padding: 0;
-   margin: 0;
-   box-sizing: border-box;}
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
 
-   h1{
-    font-family: 'Barlow', sans-serif;
-    display: flex;
-    justify-content: center;
-   }
-   h2{
-   font-family: 'Barlow', sans-serif;
-   display: flex;
-   justify-content: center;
-   padding: 15px;
-  }
-  ol{
-    font-family: 'Heebo', sans-serif;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    padding: 50px;
-    justify-content: center;
-    align-items: center;
-  }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilos para la lista de productos */
+#productos-lista {
+  list-style: none;
+  padding: 0;
+}
+
+#productos-lista li {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-agregar {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.btn-quitar {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Estilos para el carrito */
+#carrito {
+  list-style: none;
+  padding: 0;
+}
+
+#carrito li {
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Otros estilos */
+p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.toast-msg {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+/* Estilos para los botones */
+.btn-agregar, .btn-quitar, .btn-comprar, .btn-cancelar {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.btn-quitar {
+  background-color: #dc3545;
+}
+
+.btn-cancelar {
+  background-color: #ffc107;
+}

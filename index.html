@@ -1,30 +1,64 @@
 <!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>DETAILPRO</title>
-            <link rel="stylesheet" href="./css/style.css">
-            <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-        </head>
-        <body>
-            <section>
-                <h1>DETAILPRO 🚗🧽🚩</h1>
-                <h2>Catalogo de productos</h2>
-                <ol>
-                    <li>LVP Conditioner</li>
-                    <li>Pink Car Soap</li>
-                    <li>APC</li>
-                    <li>Claybar</li>
-                    <li>Glass Cleaner</li>
-                    <li>Grand Slam</li>
-                    <li>Orange Degreaser</li>
-                    <li>Finishin Polish</li>
-                </ol>
-            </section>
-            <p>Ejecutar la funcion <strong>comprar()</strong> en la consola JS.</p>
-            <p>La funcion <strong>finalizarCompra()</strong> se visualiza en la consola JS.</p>
-            <script src="./js/index.js"></script>
-        </body>
-    </html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETAILPRO</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <section class="container">
+        <h1>DETAILPRO 🚗🧽🚩</h1>
+        <h2>Catalogo de productos</h2>
+        <ul id="productos-lista">
+            <li>
+                LVP Conditioner
+                <button class="btn-agregar" data-producto-id="1">Agregar</button>
+            </li>
+            <li>
+                Pink Car Soap
+                <button class="btn-agregar" data-producto-id="2">Agregar</button>
+            </li>
+            <li>
+                APC
+                <button class="btn-agregar" data-producto-id="3">Agregar</button>
+            </li>
+            <li>
+                Claybar
+                <button class="btn-agregar" data-producto-id="4">Agregar</button>
+            </li>
+            <li>
+                Glass Cleaner
+                <button class="btn-agregar" data-producto-id="5">Agregar</button>
+            </li>
+            <li>
+                Grand Slam
+                <button class="btn-agregar" data-producto-id="6">Agregar</button>
+            </li>
+            <li>
+                Orange Degreaser
+                <button class="btn-agregar" data-producto-id="7">Agregar</button>
+            </li>
+            <li>
+                Finishing Polish
+                <button class="btn-agregar" data-producto-id="8">Agregar</button>
+            </li>
+        </ul>
+    </section>
+    <section class="container">
+        <ul id="carrito">
+            <!-- Los productos en el carrito se agregarán dinámicamente aquí -->
+        </ul>
+        <button class="btn-comprar" onclick="finalizarCompra()">Comprar</button>
+        <button class="btn-cancelar" onclick="cancelarCompra()">Cancelar Compra</button>
+        <button class="btn-carrito" onclick="mostrarCarrito()">Carrito</button>
+    </section>
+    <p>Ejecutar la funcion <strong>comprar()</strong> en la consola JS.</p>
+    <p>La funcion <strong>finalizarCompra()</strong> se visualiza en la consola JS.</p>
+    <p>La funcion <strong>cancelarCompra()</strong> se visualiza en la consola JS.</p>
+    <div class="toast-msg" id="divToast"></div>
+    <script src="./js/index.js"></script>
+</body>
+</html>
